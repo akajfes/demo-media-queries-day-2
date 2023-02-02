@@ -13,6 +13,35 @@ body {
     font-family: 'Noto Sans', sans-serif;
 }
 
+.container {
+    padding: 1rem;
+}
+
+/* ++++++++ Typography ++++++++ */
+h2 {
+    font-size: 2rem;
+    padding: 1.5rem 0;
+    text-align: center;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* ++++++++ Main Content ++++++++ */
+section {
+    margin-bottom: 1.5rem;
+}
+
+.container section:nth-of-type(even) {
+    background-color: #b04507;
+}
+
+.container section:nth-of-type(odd) {
+    background-color: #b9a072;
+}
+
 section a {
     background-color: rgba(0,0,0,0.8);
     border-radius: 0.25rem;
@@ -20,8 +49,70 @@ section a {
     display: inline-block;
     padding: 0.5rem 1rem;
     text-decoration: none;
+    margin-top: 0.5rem;
 }
 
 section a:hover {
     background-color: rgba(0,0,0,0.6);
 }
+
+.text-container {
+    padding: 1rem;
+}
+
+@media screen and (min-width:540px) {
+    .container section {
+        display: flex;
+        align-items: center;
+    }
+
+    section img,
+    section div {
+        width: 50%;
+    }
+}
+
+@media screen and (min-width:1200px) {
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2%;
+    }
+
+    .container section {
+        width: calc(98%/2);
+    }
+
+    .container section:first-of-type {
+       order: 1;
+    }
+
+    .container section:nth-of-type(2) {
+        order: 2;
+     }
+
+     .container section:nth-of-type(3) {
+        order: 4;
+     }
+
+     .container section:nth-of-type(4) {
+        order: 3;
+     }
+
+     .container section:nth-of-type(5),
+     .container section:last-of-type {
+        order: 6;
+     }
+
+
+    h2 {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width:1850px) {
+    .container {
+        max-width: 112.5rem; /*1800px in rems*/
+        margin: 0 auto;
+    }
+} 
